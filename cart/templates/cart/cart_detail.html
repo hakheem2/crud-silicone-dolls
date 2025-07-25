@@ -24,7 +24,6 @@
 		}
 
 		img{
-			width: 100%;
 			object-position: top;
 			object-fit: cover;
 			object-position: top;
@@ -43,18 +42,19 @@
 			background: -webkit-linear-gradient(to right, var(--sec-color-2), var(--msg-color));
 			background: linear-gradient(to right, var(--sec-color-2), var(--msg-color));
 		}
-		.image-col {
-			.bg-image {
-				width: 100%;
-				img {
-					max-height: 160px;
-					height: 160px;
-				}
-				@media (min-width:768px) {
-					width: 80%;
-				}
+		.image-col .bg-image {
+			width: 100%;
+		}
+		.image-col .bg-image img {
+			max-height: 160px;
+			height: 160px;
+		}
+		@media (min-width:768px) {
+			.image-col .bg-image {
+				width: 80%;
 			}
 		}
+
 		/* cart empty styling */
 		::-webkit-scrollbar {
 			width: 8px;
@@ -180,44 +180,42 @@
 					</div>
 					<!-- End Cart Items Card -->
 					<!-- Payment Methods Card -->
-					<div class="card mb-4 mb-lg-0">
-						<div class="card-body poppins-medium" id="select_payment">
-                            <p class="ps-2"><strong>Select Payment</strong></p>
+					<div class="card-body poppins-medium" id="select_payment">
+						<p class="ps-2"><strong>Select Payment</strong></p>
 
-                            <div class="d-flex flex-wrap gap-2 ps-2">
-                                <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="visa" data-payment-type="visa" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                        alt="Visa" />
-                                    Visa
-                                </label>
+						<div class="d-flex flex-wrap gap-2 ps-2">
+							<label class="btn btn-outline-primary d-flex align-items-center">
+								<input type="radio" name="payment_method" value="visa" data-payment-type="stripe" class="d-none payment-option">
+								<img class="me-2" width="45px"
+									src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+									alt="Visa" />
+								Visa
+							</label>
 
-                                <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="amex" data-payment-type="amex" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                        alt="American Express" />
-                                    Amex
-                                </label>
+							<label class="btn btn-outline-primary d-flex align-items-center">
+								<input type="radio" name="payment_method" value="amex" data-payment-type="stripe" class="d-none payment-option">
+								<img class="me-2" width="45px"
+									src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+									alt="American Express" />
+								Amex
+							</label>
 
-                                <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="mastercard" data-payment-type="mastercard" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                        alt="Mastercard" />
-                                    Mastercard
-                                </label>
+							<label class="btn btn-outline-primary d-flex align-items-center">
+								<input type="radio" name="payment_method" value="mastercard" data-payment-type="stripe" class="d-none payment-option">
+								<img class="me-2" width="45px"
+									src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+									alt="Mastercard" />
+								Mastercard
+							</label>
 
-                                <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="paypal" data-payment-type="paypal" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
-                                        alt="PayPal" />
-                                    PayPal
-                                </label>
-                            </div>
-                        </div>
+							<label class="btn btn-outline-primary d-flex align-items-center">
+								<input type="radio" name="payment_method" value="paypal" data-payment-type="paypal" class="d-none payment-option">
+								<img class="me-2" width="45px"
+									src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+									alt="PayPal" />
+								PayPal
+							</label>
+						</div>
 					</div>
 					<!-- End Payment Methods Card -->
 				</div>
@@ -283,7 +281,7 @@
 						<div class="card-body cart raleway-medium">
 							<div class="col-sm-12 empty-cart-cls text-center">
 								<!-- Empty cart image -->
-								<img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+								<img src="https://i.imgur.com/dCdflKN.png" class="img-fluid mb-4 mr-3" style="width: 150px; height: 150px;">
 								<h3 class="pb-2"><strong>Your Cart is Empty</strong></h3>
 								<h4>Add something to your cart</h4>
 								<!-- Continue shopping button -->

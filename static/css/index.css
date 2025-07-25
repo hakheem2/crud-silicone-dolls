@@ -20,9 +20,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 body{
+    width: 100vw;
     overflow-x: hidden !important;
 }
 
@@ -59,7 +61,23 @@ body{
         padding: 1% 5%;
 
         @media screen and (max-width: 768px) {
-            padding: 5%;
+            padding: 2% 10px 3% 0;
+
+            .navbar-brand{
+                padding-left: 10px;
+                .img{
+                    width: 150px;
+                    height: 70px;
+                }
+            }
+        }
+
+        .navbar-brand{
+            
+            .img{
+                width: 240px;
+                height: 80px;
+            }
         }
 
         .navbar-nav {
@@ -107,6 +125,7 @@ body{
 
 /* ===================== SIDEBAR ===================== */
 #sidebar_con {
+    display: block;
     position: fixed;
     top: 0;
     left: -100%;

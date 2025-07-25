@@ -54,15 +54,17 @@
 
         /* Banner images for each item */
         &.item-1 {
-            
+            height: 65vh;
             background-size: cover ;
             background-position: center center;
         }
         &.item-2 {
+            height: 65vh;
             background-size: cover;
             background-position: center center;
         }
         &.item-3 {
+            height: 65vh;
             background-size: cover;
             background-position: center right;
         }
