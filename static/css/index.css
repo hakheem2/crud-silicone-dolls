@@ -20,16 +20,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid red;
 }
 
 body{
     width: 100vw;
     overflow-x: hidden !important;
-}
-
-.body{
-    position: relative;
 }
 /* ===================== NAVBAR ===================== */
 #active{
@@ -49,16 +44,38 @@ body{
 
 
 
+    @media screen and (max-width: 768px) {
+        .nav-container{
+            padding: 1px 5px;
+            box-sizing: border-box;
+
+            .navbar-brand{
+                padding-left: 10px;
+                max-width: 40%;
+                overflow: hidden;
+                .img{
+                    width: 100%;
+                    height: auto;
+                    max-height: 65px;
+                }
+            }
+        }
+    }
+
+
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     width: 100%;
     height: auto;
     z-index: 800;
 
     .nav-container {
         height: auto;
-        padding: 1% 5%;
+        padding: 2px 5%;
 
         @media screen and (max-width: 768px) {
             padding: 2% 10px 3% 0;
