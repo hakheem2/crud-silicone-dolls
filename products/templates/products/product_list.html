@@ -47,14 +47,14 @@
             margin: 20px auto;
 
             .title{
-                font-size: 2rem;
+                font-size: 1.6rem;
                 color: var(--text-dark);
                 text-transform: capitalize;
                 margin: 20px 0;
             }
 
             .text{
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 color: rgba(0, 0, 0, 0.5);
             }
 
@@ -202,7 +202,7 @@
                             padding: 5px;
 
                             .product-name {
-                                font-size: 1.3rem;
+                                font-size: 1.2rem;
                                 font-weight: 500;
                                 margin: 10px 0 0;
                                 padding: 0px 10px;
@@ -221,14 +221,14 @@
                             }
 
                             .product-price {
-                                font-size: 1.2rem;
+                                font-size: 1.1rem;
                                 color: var(--meadium-sea-green);
                                 font-weight: 500;
                                 margin-top: 5px;
                             }
 
                             .product-sex {
-                                font-size: 1.1rem;
+                                font-size: 1.0rem;
                                 color: var(--dark-color);
                                 margin-top: 5px;
                             }
@@ -247,7 +247,7 @@
 
                                 .rating {
                                     span {
-                                        font-size: 1.1rem;
+                                        font-size: 1.0rem;
                                         color: var(--meadium-sea-green);
                                     }
                                 }
@@ -335,7 +335,7 @@
     <!-- Products Section -->
     <section class="products-section">
         <div class="container">
-            <div class="products row gap-2 gap-md-0">
+            <div class="products row gap-2 gap-md-0 px-3">
                 <!-- Product Sorting Box -->
                 <div class="product-sorting-box d-flex align-items-center justify-content-between raleway-medium">
                     <p class="products-showing">
@@ -354,7 +354,7 @@
                 </div>
                 <!-- Single Product Card Loop -->
                 {% for product in products %}
-                    <div class="product col-11 col-md-6 col-lg-3">
+                    <div class="product col-12 col-md-6 col-lg-3">
                         <div class="product-card shadow">
                             <div class="product-img">
                                 <img src="{{ product.image.url }}" class="img img-fluid img-thumpnail" alt="Silicone Doll 1">
