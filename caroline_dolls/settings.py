@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-&w+4ahbp6d%ux#nz&m1fz!790nmaozw+6htwu_2x!fexel02$d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 #caroline-heuss-dolls.onrender.com', 'localhost', '127.0.0.1
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', "*").split(',')
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
-
+#ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "", "127.0.0.1").split(",")
+#ALLOWED_HOSTS = os.environ.get('localhost', '127.0.0.1').split(",")
 
 # Application definition
 

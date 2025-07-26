@@ -121,6 +121,33 @@
             }
             });
         });
+
+
+        function isInViewport(element) {
+			const rect = element.getBoundingClientRect();
+			return (
+			rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.bottom >= 0
+			);
+		}
+
+		function animateOnScroll() {
+			$('*:not(script):not(style):not(link):not(meta)').each(function () {
+				if (isInViewport(this)) {
+					$(this).addClass('visible')
+				}
+			});
+		}
+
+		$(document).ready(function () {
+			// Animate on load
+			animateOnScroll();
+
+			// Animate on scroll
+			$(window).on('scroll resize', function () {
+			animateOnScroll();
+			});
+		});
      </script>
     <script>
         $(document).ready(function () {
@@ -170,11 +197,7 @@
                 });
             });
         });
-
     </script>
-    <script>
-</script>
-
 </body>
 </html>
 

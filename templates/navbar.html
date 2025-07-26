@@ -1,6 +1,6 @@
 {% load static %}
 <!-- ===================== NAVBAR START ===================== -->
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm m-0 p-0">
+    <nav class="navbar navbar-expand-md navbar-light d-flex align-items-center bg-white shadow-sm m-0 p-0">
         <div class="nav-container container-fluid d-flex justify-content-between align-items-center">
             <a href="{% url 'home' %}" class="navbar-brand">
                 <img src="{% static 'images/site-logo.avif' %}" class="img img-fluid" alt="Caroline Heuss Silicone Dolls">
@@ -75,6 +75,22 @@
         }
         });
     })
+
+    let prevScrollPos = $(window).scrollTop();
+
+    $(window).on("scroll", function () {
+        let currentScrollPos = $(window).scrollTop();
+        
+        if (currentScrollPos > prevScrollPos) {
+        // Scrolling down
+        $(".navbar").css("top", "-100px"); // Adjust to hide
+        } else {
+        // Scrolling up
+        $(".navbar").css("top", "0");
+        }
+
+        prevScrollPos = currentScrollPos;
+    });
 </script>
 <!-- ===================== NAVBAR END ===================== -->
     

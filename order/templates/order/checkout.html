@@ -86,38 +86,54 @@
                         </div>
                         <div class="card-body poppins-medium" id="select_payment">
                             <p class="ps-2"><strong>Select Payment</strong></p>
-
-                            <div class="d-flex flex-wrap gap-2 ps-2">
+                            <div class="d-flex flex-wrap gap-2 ps-2">                            
+                                <!-- Chime -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="visa" data-payment-type="stripe" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                        alt="Visa" />
-                                    Visa
+                                    <input type="radio" name="payment_method" value="chime" data-payment-type="manual" class="d-none payment-option">
+                                    <img class="me-2" width="45" src="https://img.icons8.com/color/480/000000/chime--v2.png" alt="Chime">
+                                    Chime
                                 </label>
 
+                                <!-- Zelle -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="amex" data-payment-type="stripe" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                        alt="American Express" />
-                                    Amex
+                                    <input type="radio" name="payment_method" value="zelle" data-payment-type="manual" class="d-none payment-option">
+                                    <img class="me-2" width="45" src="https://img.icons8.com/color/480/000000/zelle.png" alt="Zelle">
+                                    Zelle
                                 </label>
 
+                                <!-- Apple Pay -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="mastercard" data-payment-type="stripe" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                        alt="Mastercard" />
-                                    Mastercard
+                                <input type="radio" name="payment_method" value="apple_pay" data-payment-type="apple" class="d-none payment-option">
+                                <img class="me-2" width="45px" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
+                                Apple Pay
                                 </label>
 
+                                <!-- Venmo -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                    <input type="radio" name="payment_method" value="paypal" data-payment-type="paypal" class="d-none payment-option">
-                                    <img class="me-2" width="45px"
-                                        src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
-                                        alt="PayPal" />
-                                    PayPal
+                                <input type="radio" name="payment_method" value="venmo" data-payment-type="manual" class="d-none payment-option">
+                                <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/venmo-paypal-payment-app-logo-png-5.png" width="350" alt="venmo paypal payment app logo png" />
+                                Venmo
+                                </label>
+
+                                <!-- Western Union -->
+                                <label class="btn btn-outline-primary d-flex align-items-center">
+                                <input type="radio" name="payment_method" value="western_union" data-payment-type="manual" class="d-none payment-option">
+                                <img class="me-2" width="45" src="{% static 'images/western-union.png' %}" alt="Western Union">
+                                Western Union
+                                </label>
+
+                                <!-- Walmart -->
+                                <label class="btn btn-outline-primary d-flex align-items-center">
+                                <input type="radio" name="payment_method" value="walmart" data-payment-type="manual" class="d-none payment-option">
+                                <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/walmart-logo-png-6.png" width="350" alt="Walmart Logo Background" />
+                                Walmart
+                                </label>
+
+                                <!-- MoneyGram -->
+                                <label class="btn btn-outline-primary d-flex align-items-center">
+                                <input type="radio" name="payment_method" value="moneygram" data-payment-type="manual" class="d-none payment-option">
+                                <img src="{% static 'images/moneygram.jpeg' %}" alt="Western Union" width="45" class="me-2">
+                                MoneyGram
                                 </label>
                             </div>
                         </div>
@@ -181,9 +197,6 @@
 								<li class="list-group-item d-flex justify-content-between align-items-center px-0 mb-3">
 									<div>
 										<strong>Total amount</strong>
-										<strong>
-											<p class="mb-0">(including VAT)</p>
-										</strong>
 									</div>
 									<span class="poppins-medium"><strong id="cartTotal" style="font-size: 1.3rem;">${{ cart_total|floatformat:2|intcomma }}</strong></span>
 								</li>
