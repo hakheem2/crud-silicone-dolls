@@ -23,16 +23,16 @@
 }
 
 
-*:not(script):not(style):not(link):not(meta) {
+body *:not(script):not(style):not(link):not(meta) {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
 }
 
 *.visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
+    opacity: 1;
+    transform: translateY(0);
+}
 
 body{
     width: 100vw;
@@ -81,9 +81,8 @@ body{
     position: sticky;
     top: 0;
     width: 100%;
-    overflow: hidden;
     height: 90px;
-    z-index: 900;
+    z-index: 800;
 
     .nav-container {
         height: fit-content;
@@ -165,7 +164,7 @@ body{
     padding: 0 !important;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 999;
+    z-index: 900;
     transition: all 0.3s ease;
 }
 
