@@ -107,17 +107,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'caroline_heuss_db',
-#         'USER': 'caroline_heuss_db_user',
-#         'PASSWORD': 'MmoKW5kWZcJH2TU4U2FrzuCLdWyWIBVq',
-#         'HOST': 'dpg-d20vm7h5pdvs739gvkv0-a.postgres.render.com',
-#         'PORT': '5432',
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
