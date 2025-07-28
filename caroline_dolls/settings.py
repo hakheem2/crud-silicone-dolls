@@ -25,24 +25,13 @@ SECRET_KEY = 'django-insecure-&w+4ahbp6d%ux#nz&m1fz!790nmaozw+6htwu_2x!fexel02$d
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-# SECURE_HSTS_SECONDS = 3600  # Optional, enable HTTP Strict Transport Security
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'carolineheusssiliconedolls.com',
     'www.carolineheusssiliconedolls.com',
-    'fii06pc6.up.railway.app',
-    '127.0.0.1',
-    'localhost',
+    'fii06pc6.up.railway.app'  # your Railway subdomain (optional but good to keep for testing)
 ]
-
 
 #caroline-heuss-dolls.onrender.com', 'localhost', '127.0.0.1
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', "*").split(',')
@@ -107,6 +96,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'caroline_heuss_db',
+#         'USER': 'caroline_heuss_db_user',
+#         'PASSWORD': 'MmoKW5kWZcJH2TU4U2FrzuCLdWyWIBVq',
+#         'HOST': 'dpg-d20vm7h5pdvs739gvkv0-a.postgres.render.com',
+#         'PORT': '5432',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -161,3 +161,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# SECURITY
+#SECURE_SSL_REDIRECT = True  # Force HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+#SECURE_HSTS_SECONDS = 3600  # Optional, enable HTTP Strict Transport Security
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
