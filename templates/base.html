@@ -149,6 +149,7 @@
 			});
 		});
      </script>
+
     <script>
         $(document).ready(function () {
             // Handle add-to-cart click
@@ -170,11 +171,11 @@
                         // Optional: update cart count
                         $('#cart-count').text(response.cart_count);
                         $('#alertBox').html(
-                            `<div class="card-body pt-2 text-center d-flex align-items-center justify-content-center">
-                                <h3 class="raleway-semibold text-success fs-5 pe-2">Product added to cart</h3>
-                                <span class="material-symbols-outlined text-success h2 py-0">check_circle_unread</span>
+                            `<div class="card-body pt-2 text-center d-flex align-items-center justify-content-center" style="opacity: 1 !important; transform: translateY(0) !important;">
+                                <h3 class="raleway-semibold text-success fs-5 pe-2" style="opacity: 1 !important; transform: translateY(0) !important;">Product added to cart</h3>
+                                <span class="material-symbols-outlined text-success h2 py-0" style="opacity: 1 !important; transform: translateY(0) !important;">check_circle_unread</span>
                             </div> 
-                            <i class="text-warning d-block mx-auto raleway-medium" style="font-size: 1re,rem;">reloadig in 2s</i>`
+                            <i class="text-warning d-block mx-auto raleway-medium" style="font-size: 1re,rem; opacity: 1 !important; transform: translateY(0) !important;">closing in 2s</i>`
                         ).fadeIn();
 						setTimeout(function() {
 						$('#alertBox').fadeOut();
@@ -184,17 +185,56 @@
                         $('#alertBox').fadeIn();
 						setTimeout(function() {
 						$('#alertBox').html(
-                            `<div class="card-body pt-2 text-center d-flex align-items-center justify-content-center">
-                                <h3 class="raleway-semibold text-warning fs-5 pe-2">Error adding product to cart</h3>
-                                <span class="material-symbols-outlined text-warning h2 py-0">check_circle_unread</span>
+                            `<div class="card-body pt-2 text-center d-flex align-items-center justify-content-center" style="opacity: 1 !important; transform: translateY(0) !important;">
+                                <h3 class="raleway-semibold text-warning fs-5 pe-2" style="opacity: 1 !important; transform: translateY(0) !important;">Error adding product to cart</h3>
+                                <span class="material-symbols-outlined text-warning h2 py-0" style="opacity: 1 !important; transform: translateY(0) !important;">check_circle_unread</span>
                             </div>
-                            <p class="text-warning d-block mx-auto raleway-medium" style="font-size: 1re,rem;">reloadig in 2s</p>`
+                            <p class="text-warning d-block mx-auto raleway-medium" style="font-size: 1re,rem; opacity: 1 !important; transform: translateY(0) !important;">reloadig in 2s</p>`
                         ).fadeOut();
 						}, 2000);
                     }
                 });
             });
         });
+
+
+        //add products to wishlist
+        
+        $(document).on('click', '.favourite', function(e) {
+            e.preventDefault();
+
+            let button = $(this);
+            let productId = button.data('product-id');
+            let isInWishlist = button.data('wishlist-added');  // 1 or 0
+
+            let url = isInWishlist == 1 
+                ? '{% url "add_to_wishlist" %}'
+                : '{% url "remove_from_wishlist" %}';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                
+                data: {
+                    'product_id': productId,
+                    'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Toggle the state
+                        let newState = isInWishlist == 1 ? 0 : 1;
+                        button.data('wishlist-added', newState);
+
+                        // Toggle icon fill
+                        let icon = button.find('.material-symbols-outlined');
+                        icon.css('font-variation-settings', `"FILL" ${newState}`);
+                    }
+                },
+                error: function() {
+                    alert('An error occurred. Please try again.');
+                }
+            });
+        });
+        
     </script>
 </body>
 </html>

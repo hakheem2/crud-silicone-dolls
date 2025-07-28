@@ -65,3 +65,14 @@ class ProductGallery(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - Gallery Image"
+
+
+class Wishlist(models.Model):
+    session_key = models.CharField(max_length=100, db_index=True)
+    products = models.ManyToManyField(Product, related_name='wishlists')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Wishlist {self.id} - Session {self.session_key}"
+
+

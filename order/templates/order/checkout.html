@@ -85,7 +85,7 @@
                             <input type="text" name="country" placeholder="Enter your country.." class="form-control rounded shadow-0 raleway-medium dark-text" id="country">
                         </div>
                         <div class="card-body poppins-medium" id="select_payment">
-                            <p class="ps-2"><strong>Select Payment</strong></p>
+                            <p class="ps-2"><strong>Select Payment Method</strong></p>
                             <div class="d-flex flex-wrap gap-2 ps-2">                            
                                 <!-- Chime -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
@@ -103,37 +103,37 @@
 
                                 <!-- Apple Pay -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                <input type="radio" name="payment_method" value="apple_pay" data-payment-type="apple" class="d-none payment-option">
-                                <img class="me-2" width="45px" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
-                                Apple Pay
+                                    <input type="radio" name="payment_method" value="apple_pay" data-payment-type="apple" class="d-none payment-option">
+                                    <img class="me-2" width="45px" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
+                                    Apple Pay
                                 </label>
 
                                 <!-- Venmo -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                <input type="radio" name="payment_method" value="venmo" data-payment-type="manual" class="d-none payment-option">
-                                <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/venmo-paypal-payment-app-logo-png-5.png" width="350" alt="venmo paypal payment app logo png" />
-                                Venmo
+                                    <input type="radio" name="payment_method" value="venmo" data-payment-type="manual" class="d-none payment-option">
+                                    <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/venmo-paypal-payment-app-logo-png-5.png" width="350" alt="venmo paypal payment app logo png" />
+                                    Venmo
                                 </label>
 
                                 <!-- Western Union -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                <input type="radio" name="payment_method" value="western_union" data-payment-type="manual" class="d-none payment-option">
-                                <img class="me-2" width="45" src="{% static 'images/western-union.png' %}" alt="Western Union">
-                                Western Union
+                                    <input type="radio" name="payment_method" value="western_union" data-payment-type="manual" class="d-none payment-option">
+                                    <img class="me-2" width="45" src="{% static 'images/western-union.png' %}" alt="Western Union">
+                                    Western Union
                                 </label>
 
                                 <!-- Walmart -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                <input type="radio" name="payment_method" value="walmart" data-payment-type="manual" class="d-none payment-option">
-                                <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/walmart-logo-png-6.png" width="350" alt="Walmart Logo Background" />
-                                Walmart
+                                    <input type="radio" name="payment_method" value="walmart" data-payment-type="manual" class="d-none payment-option">
+                                    <img class="me-2" width="45" src="https://www.freeiconspng.com/uploads/walmart-logo-png-6.png" width="350" alt="Walmart Logo Background" />
+                                    Walmart
                                 </label>
 
                                 <!-- MoneyGram -->
                                 <label class="btn btn-outline-primary d-flex align-items-center">
-                                <input type="radio" name="payment_method" value="moneygram" data-payment-type="manual" class="d-none payment-option">
-                                <img src="{% static 'images/moneygram.jpeg' %}" alt="Western Union" width="45" class="me-2">
-                                MoneyGram
+                                    <input type="radio" name="payment_method" value="moneygram" data-payment-type="manual" class="d-none payment-option">
+                                    <img src="{% static 'images/moneygram.png' %}" alt="Western Union" width="45" class="me-2">
+                                    MoneyGram
                                 </label>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
 						<div class="card-body raleway-medium">
 							<ul class="list-group list-group-flush">
                                 <li class="list-group-item raleway-medium px-0">
-									<span class="h4">Cart Items</span>
+									<span class="h5">Cart Items</span>
                                     <ul class="list-group list-group-flush">
                                         {% for item in cart_items %}
                                             <li class="list-group-item px-0 pb-0">
@@ -198,7 +198,7 @@
 									<div>
 										<strong>Total amount</strong>
 									</div>
-									<span class="poppins-medium"><strong id="cartTotal" style="font-size: 1.3rem;">${{ cart_total|floatformat:2|intcomma }}</strong></span>
+									<span class="poppins-medium"><strong id="cartTotal" style="font-size: 1.1rem;;">${{ cart_total|floatformat:2|intcomma }}</strong></span>
 								</li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     <a href="{% url 'cart:cart_detail' %}" class="h6 mx-auto" style="color: dodgerblue; border-bottom: 1px solid dodgerblue;">Return to cart</a>
