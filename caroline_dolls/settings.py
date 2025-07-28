@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-&w+4ahbp6d%ux#nz&m1fz!790nmaozw+6htwu_2x!fexel02$d
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'carolineheusssiliconedolls.com',
     'www.carolineheusssiliconedolls.com',
     'fii06pc6.up.railway.app',
-    'caroline-heuss-silicone-dolls.onrender.com'
+    'caroline-heuss-silicone-dolls.onrender.com',
+    'localhost', '127.0.0.1'
 ]
 
 #caroline-heuss-dolls.onrender.com', 'localhost', '127.0.0.1
@@ -163,7 +164,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # SECURITY
-#SECURE_SSL_REDIRECT = True  # Force HTTPS
+# SECURE_SSL_REDIRECT = True  # Force HTTPS
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 #SECURE_HSTS_SECONDS = 3600  # Optional, enable HTTP Strict Transport Security

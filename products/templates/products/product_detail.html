@@ -938,26 +938,7 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                let cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                    let cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
-
-        // Set up global AJAX CSRF token header
-        $.ajaxSetup({
-            headers: { 'X-CSRFToken': getCookie('csrftoken') }
-        });
+        
 
 
 
@@ -967,7 +948,6 @@
 
                 let quantity = $('#quantity').val();
                 let productId = $('#add-cart').data('product-id');
-                let csrfToken = $("input[name='csrfmiddlewaretoken']").val();
 
                 $.ajax({
                     url: '{% url "cart:add_to_cart" %}',
