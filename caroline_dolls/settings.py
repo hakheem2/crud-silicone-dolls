@@ -30,7 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'carolineheusssiliconedolls.com',
     'www.carolineheusssiliconedolls.com',
-    'fii06pc6.up.railway.app'  # your Railway subdomain (optional but good to keep for testing)
+    'fii06pc6.up.railway.app',
+    'caroline-heuss-silicone-dolls.onrender.com'
 ]
 
 #caroline-heuss-dolls.onrender.com', 'localhost', '127.0.0.1
