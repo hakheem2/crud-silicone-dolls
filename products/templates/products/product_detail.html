@@ -802,8 +802,15 @@
                         <div class="product-card shadow">
                             <div class="product-img">
                                 <img src="{{ item.image.url }}" class="img img-fluid img-thumpnail" alt="item.name">
-                                <button class="favourite" id="add-favourite">
-                                    <span class="material-symbols-outlined">favorite</span>
+                                <button 
+                                    class="favourite" 
+                                    id="add-favourite-{{ product.id }}" 
+                                    data-product-id="{{ product.id }}" 
+                                    data-wishlist-added="{% if product.id in wishlist_products %}1{% else %}0{% endif %}">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' {% if product.id in wishlist_products %}1{% else %}0{% endif %};">
+                                        favorite
+                                    </span>
                                 </button>
                             </div>
                             <div class="product-details">
@@ -931,6 +938,29 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                let cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // Set up global AJAX CSRF token header
+        $.ajaxSetup({
+            headers: { 'X-CSRFToken': getCookie('csrftoken') }
+        });
+
+
+
         $(document).ready(function () {
             $('#add-to-cart-form').on('submit', function (e) {
                 e.preventDefault();
@@ -945,7 +975,6 @@
                     data: {
                         'quantity': quantity,
                         'product_id': productId,
-                        'csrfmiddlewaretoken': csrfToken
                     },
                     success: function (response) {
                         if (response.success) {
@@ -966,6 +995,9 @@
             // function to add active class to 1st carosel item on related products page
             $('#carousel-mobile').find('.carousel-item:first').addClass('active');
         });
+
+
+
         // Quantity buttons
         document.getElementById('add-qty').addEventListener('click', () => {
             const qty = document.getElementById('quantity');

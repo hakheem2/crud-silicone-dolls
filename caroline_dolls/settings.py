@@ -25,9 +25,31 @@ SECRET_KEY = 'django-insecure-&w+4ahbp6d%ux#nz&m1fz!790nmaozw+6htwu_2x!fexel02$d
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['*']
+if DEBUG:
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+else:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+SECURE_HSTS_SECONDS = 3600  # Optional, enable HTTP Strict Transport Security
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+
+ALLOWED_HOSTS = [
+    'carolineheusssiliconedolls.com',
+    'www.carolineheusssiliconedolls.com',
+    'fii06pc6.up.railway.app',
+    '127.0.0.1',
+    'localhost',
+]
+
+
 #caroline-heuss-dolls.onrender.com', 'localhost', '127.0.0.1
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', "*").split(',')
 #ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "", "127.0.0.1").split(",")
@@ -154,3 +176,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # settings.py
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
