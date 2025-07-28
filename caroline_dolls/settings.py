@@ -98,16 +98,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'caroline_heuss_db',
-#         'USER': 'caroline_heuss_db_user',
-#         'PASSWORD': 'MmoKW5kWZcJH2TU4U2FrzuCLdWyWIBVq',
-#         'HOST': 'dpg-d20vm7h5pdvs739gvkv0-a.postgres.render.com',
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
@@ -164,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # SECURITY
-# SECURE_SSL_REDIRECT = True  # Force HTTPS
+SECURE_SSL_REDIRECT = True  # Force HTTPS
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 #SECURE_HSTS_SECONDS = 3600  # Optional, enable HTTP Strict Transport Security
